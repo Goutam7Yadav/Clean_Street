@@ -1,0 +1,79 @@
+.landing {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: url("../assets/landingpage1.jpeg") no-repeat center center/cover;
+  position: relative;
+  color: #fff;
+}
+
+/* Optional overlay for readability */
+.landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  z-index: 0;
+}
+
+.landing-header {
+  background-color: rgb(129, 166, 198);
+  display: flex;
+  border: none;
+  padding: 5px 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-title {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.landing-title button {
+  margin: 5px;
+  background-color: #d3a775;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.landing-title button:hover {
+  background-color: #ca7718;
+}
+
+.topheading {
+  margin-top: 8px;
+  font-size: 25px;
+  color: white;
+}
+
+.landing-content {
+  color:white;
+      min-height: 300px;
+      background: rgba(255,255,255,0.20);
+      margin: 70px auto;
+      padding: 40px;
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.landing-content p{
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
