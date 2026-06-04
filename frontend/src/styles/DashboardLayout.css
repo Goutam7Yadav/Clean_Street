@@ -36,10 +36,85 @@
   color: #fff;
   text-decoration: none;
 }
+.sidebar li a b{
+  color:red;
+}
 
 .main-content {
   flex: 1;
   padding: 20px;
   background: #fff;
   overflow-y: auto;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+/* Notifications panel */
+.notifications-panel {
+  background: #F3E3D0;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.notifications-panel h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.notifications-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-panel li {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notifications-panel li small {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Profile form */
+.profile-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }

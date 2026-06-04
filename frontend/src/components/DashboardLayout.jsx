@@ -23,9 +23,8 @@ function DashboardLayout() {
             <>
               <li><Link to="/user-dashboard/report">Report Issue</Link></li>
               <li><Link to="/user-dashboard/issues">My Issues</Link></li>
-              <li><Link to="/user-dashboard/feedback">Feedback</Link></li>
               <li><Link to="/user-dashboard/profile">Profile</Link></li>
-              <li><Link to="/user-dashboard/logout">Logout</Link></li>
+              <li><Link to="/user-dashboard/logout" style={{fontWeight: "bold", color: "red" }} >Logout</Link></li>
             </>
           )}
 
@@ -35,7 +34,7 @@ function DashboardLayout() {
               <li><Link to="/volunteer-dashboard/tasks">Assigned Tasks</Link></li>
               <li><Link to="/volunteer-dashboard/stats">My Stats</Link></li>
               <li><Link to="/volunteer-dashboard/profile">Profile</Link></li>
-              <li><Link to="/volunteer-dashboard/logout">Logout</Link></li>
+              <li><Link to="/volunteer-dashboard/logout" style={{fontWeight: "bold", color: "red" }} >Logout</Link></li>
             </>
           )}
 
@@ -46,7 +45,7 @@ function DashboardLayout() {
               <li><Link to="/admin-dashboard/issues">All Issues</Link></li>
               <li><Link to="/admin-dashboard/stats">Analytics</Link></li>
               <li><Link to="/admin-dashboard/profile">Profile</Link></li>
-              <li><Link to="/admin-dashboard/logout">Logout</Link></li>
+              <li><Link to="/admin-dashboard/logout" style={{fontWeight: "bold", color: "red" }} >Logout</Link></li>
             </>
           )}
         </ul>
@@ -56,8 +55,7 @@ function DashboardLayout() {
           <button
             className="notification-btn"
             onClick={() => setShowNotifications(!showNotifications)}
-          >
-          <Link to="/notifications" className="notification-btn">📬</Link>
+          >📬
           </button>
         </div>
       </aside>
@@ -66,7 +64,9 @@ function DashboardLayout() {
       <main className="main-content">
         <Outlet />
       </main>
-        {showNotifications && <NotificationsPanel />}
+{showNotifications && (
+  <NotificationsPanel className={showNotifications ? "open" : ""} />
+)}
     </div>
   );
 }

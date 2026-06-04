@@ -99,32 +99,32 @@ router.get("/", authMiddleware, async (req, res) => {
 });
 
 // ✅ Admin assigns an issue to a volunteer
-router.put("/:id/assign", authMiddleware, async (req, res) => {
-  try {
-    if (req.user.role !== "admin") {
-      return res.status(403).json({ error: "Only admins can assign issues" });
-    }
+// router.put("/:id/assign", authMiddleware, async (req, res) => {
+//   try {
+//     if (req.user.role !== "admin") {
+//       return res.status(403).json({ error: "Only admins can assign issues" });
+//     }
 
-    const { volunteerId } = req.body;
+//     const { volunteerId } = req.body;
 
-    const issue = await Issue.findByIdAndUpdate(
-      req.params.id,
-      { assignedTo: volunteerId, status: "In Progress" },
-      { new: true }
-    )
-      .populate("userId", "username email")
-      .populate("assignedTo", "username email");
+//     const issue = await Issue.findByIdAndUpdate(
+//       req.params.id,
+//       { assignedTo: volunteerId, status: "In Progress" },
+//       { new: true }
+//     )
+//       .populate("userId", "username email")
+//       .populate("assignedTo", "username email");
 
-    if (!issue) {
-      return res.status(404).json({ error: "Issue not found" });
-    }
+//     if (!issue) {
+//       return res.status(404).json({ error: "Issue not found" });
+//     }
 
-    res.json(issue);
-  } catch (err) {
-    console.error("❌ Error assigning issue:", err);
-    res.status(500).json({ error: err.message });
-  }
-});
+//     res.json(issue);
+//   } catch (err) {
+//     console.error("❌ Error assigning issue:", err);
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 // // ✅ Volunteer resolves issue with optional completion photo
 // router.put("/:id/resolve", authMiddleware, completionUpload.single("completionPhoto"), async (req, res) => {

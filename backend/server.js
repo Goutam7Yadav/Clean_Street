@@ -24,8 +24,8 @@ const notificationRoutes = require("./routes/notificationRoutes");
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);                  // ✅ mount user routes
 //app.use("/api/register", authRoutes);
-app.use("/api/issues", issueRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/issues", issueRoutes);
 app.use("/api/notifications", notificationRoutes);
 // Connect to MongoDB (local or from .env)
 mongoose

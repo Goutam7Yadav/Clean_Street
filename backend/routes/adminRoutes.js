@@ -5,6 +5,7 @@ const checkRole = require("../middleware/checkRole");
 const User = require("../models/User");
 const Issue = require("../models/Issue");
 const issueRoutes = require("./issueRoutes");
+const Notification = require("../models/Notification");
 
 // Get users with optional role filter
 router.get("/users", authMiddleware, checkRole("admin"), async (req, res) => {
@@ -70,10 +71,11 @@ router.put("/issues/:id/assign", authMiddleware, checkRole("admin"), async (req,
     issue.status = "In Progress";
     await issue.save();
 
-    // // ✅ Automatically create a notification
-    // await new Notification({
-    //   message: `Issue "${issue.title}" assigned to ${volunteer.username}`
-    // }).save();
+    // ✅ Automatically create a notification
+   await new Notification({
+  message: `Issue "${issue.title}" assigned to ${volunteer.username || volunteer.name || volunteer.email}`
+}).save();
+
 
     const populatedIssue = await Issue.findById(issue._id)
       .populate("userId", "username email")
@@ -165,5 +167,15 @@ router.get("/user-roles", authMiddleware, checkRole("admin"), async (req, res) =
 
 // Mount all issue routes under /issues (for advanced analytics, summary, etc.)
 router.use("/issues", issueRoutes);
+
+router.get("/notifications", authMiddleware, async (req, res) => {
+  try {
+    const notifications = await Notification.find().sort({ createdAt: -1 });
+    res.json(notifications);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 
 module.exports = router;

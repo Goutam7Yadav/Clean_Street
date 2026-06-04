@@ -14,10 +14,40 @@ function LandingPage() {
         </p>
       </header>
 
+ <div class="container2">
+        <div class="box_1">
+            <div class="box_2">
+                <div class="box_3">
+                </div>
+            </div>
+        </div>
+    </div>
+
       {/* Content */}
       <div className="landing-content">
         <h1 style={{ color: '#fff' }}>Welcome to Clean Street</h1>
         <p>Report issues, volunteer, and manage your community together.</p>
+      <div class="container">
+        <div class="box_1">
+            <div class="box_2">
+                <div class="box_3">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container1">
+        <div class="box_1">
+            <div class="box_2">
+                <div class="box_3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div className="landing-footer-logo">
+        <img src="/Clogo.png" alt="Clean Street Logo" />
       </div>
     </div>
   );
