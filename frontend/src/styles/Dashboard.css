@@ -27,7 +27,7 @@
 
 .card {
   flex: 1;
-  padding: 15px 25px;
+  padding: 14px 20px;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   font-weight: bold;

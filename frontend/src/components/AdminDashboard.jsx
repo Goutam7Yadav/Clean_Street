@@ -70,7 +70,15 @@ function AdminDashboard() {
       } else {
         issuesRes = await getFilteredIssues(filter, token);
       }
-      setIssues(issuesRes.data || []);
+      /*--- */
+       // ✅ Sort newest first
+      const sortedIssues = (issuesRes.data || []).sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      setIssues(sortedIssues);
+      /*--- */
+
+      //setIssues(issuesRes.data || []);
     } catch (err) {
       console.error("❌ Error fetching admin data:", err);
       setError(err);

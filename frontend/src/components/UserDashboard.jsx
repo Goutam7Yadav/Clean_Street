@@ -53,7 +53,7 @@ function UserDashboard() {
           <p>Loading issues...</p>
         ) : recentIssues.length ? (
           <div className="recent-list">
-            {recentIssues.slice(0, 5).map((issue) => (
+            {recentIssues.slice(0, 10).map((issue) => (
               <div key={issue._id} className="recent-card">
                 <h3>{issue.title}</h3>
                 {issue.photo && (

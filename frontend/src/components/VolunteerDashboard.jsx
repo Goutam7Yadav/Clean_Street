@@ -21,6 +21,10 @@ function VolunteerDashboard() {
         issue.assignedTo && 
         (issue.assignedTo._id === volunteerId || issue.assignedTo === volunteerId)
       );
+      // ✅ Sort tasks by createdAt descending (newest first)
+      const sortedTasks = myTasks.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
       setTasks(myTasks);
     } catch (err) {
       console.error("❌ Error fetching volunteer tasks:", err);

@@ -69,7 +69,6 @@ function AdminStats() {
         <VolunteerStatsChart stats={volunteerStats} />
         <ResolutionTimeChart resolutionStats={{ overallAvg: avgTime?.avgResolutionTimeHours, volunteers: [] }} />
         <ComplaintCategoriesChart categories={categoryStats} />
-        <UserRolesChart roles={userRolesStats} />
       </div>
     </div>
   );

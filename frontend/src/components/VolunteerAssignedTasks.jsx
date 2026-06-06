@@ -18,7 +18,14 @@ function VolunteerAssignedTasks() {
         issue.assignedTo &&
         (issue.assignedTo._id === volunteerId || issue.assignedTo === volunteerId)
       );
-      setTasks(myTasks);
+      /*--- */
+       // ✅ Sort newest first
+    const sortedTasks = myTasks.sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    );
+    setTasks(sortedTasks);
+    /*--- */
+      //setTasks(myTasks);
     } catch (err) {
       console.error("❌ Error fetching tasks:", err);
     }
@@ -67,7 +74,7 @@ function VolunteerAssignedTasks() {
     <div className="volunteerAssigntask">
       <h2>My Assigned Tasks</h2>
       {tasks.map(task => (
-        <div key={task._id} className="task-card" style={{border:"1px solid #b7b7b7", padding:"10px", margin:"10px 0"}}>
+        <div key={task._id} className="task-card" style={{border:"3px solid #ecbb8381", padding:"10px", margin:"10px 0"}}>
           <h3>{task.title}</h3>
           <p>Status: {task.status}</p>
 
