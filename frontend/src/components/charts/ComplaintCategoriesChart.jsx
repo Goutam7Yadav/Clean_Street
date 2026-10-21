@@ -26,7 +26,11 @@ function ComplaintCategoriesChart({ categories }) {
           "#f87171", // red
           "#60a5fa", // blue
           "#fbbf24", // yellow
-          "#34d399"  // green
+          "#34d399",  // green
+          "#800080",
+          "#00FFFF",
+          "#808080",
+          "#808000"
         ],
         borderColor: "#fff",
         borderWidth: 2
